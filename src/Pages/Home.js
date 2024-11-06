@@ -7,17 +7,26 @@ import BookAppointment from "../Components/BookAppointment";
 import Reviews from "../Components/Reviews";
 import Doctors from "../Components/Doctors";
 import Footer from "../Components/Footer";
+import { Container } from "../Components/Container";
 
 function Home() {
   return (
     <div className="home-section">
-      <Navbar />
+      <Container>
+        <Navbar />
+      </Container>
       <Hero />
-      <Info />
+      <Container>
+        <Info />
+      </Container>
       <About />
-      <BookAppointment />
+      <Container>
+        <BookAppointment />
+      </Container>
       <Reviews />
-      <Doctors />
+      <Container>
+        <Doctors />
+      </Container>
       <Footer />
     </div>
   );

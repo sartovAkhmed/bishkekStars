@@ -7,50 +7,63 @@ import profile4 from "../Assets/profile-4.png";
 import "../Styles/Doctors.css";
 
 function Doctors() {
+  const cardItems = [
+    {
+      img: profile1,
+      name: "Kanybekov Maksat",
+      title: "Frontend-developer",
+      stars: "4.9",
+      reviews: "1800",
+    },
+    {
+      img: profile2,
+      name: "Kanybekov Maksat",
+      title: "Frontend-developer",
+      stars: "4.9",
+      reviews: "1800",
+    },
+    {
+      img: profile3,
+      name: "Kanybekov Maksat",
+      title: "Frontend-developer",
+      stars: "4.9",
+      reviews: "1800",
+    },
+    {
+      img: profile4,
+      name: "Kanybekov Maksat",
+      title: "Frontend-developer",
+      stars: "4.9",
+      reviews: "1800",
+    },
+  ];
+
   return (
     <div className="doctor-section" id="doctors">
       <div className="dt-title-content">
         <h3 className="dt-title">
-          <span>Meet Our Doctors</span>
+          <span>Наши специалисты</span>
         </h3>
 
         <p className="dt-description">
-          Meet our exceptional team of specialist doctors, dedicated to
-          providing top-notch healthcare services at Health Plus. Trust in their
-          knowledge and experience to lead you towards a healthier and happier
-          life.
+          Наши эксперты — это профессионалы с многолетним опытом, которые
+          постоянно совершенствуют свои навыки и следят за новыми трендами.
+          Каждый из них прошел строгий отбор, прошел обучение и сертификацию,
+          что гарантирует высокое качество нашей работы.
         </p>
       </div>
 
       <div className="dt-cards-content">
-        <DoctorCard
-          img={profile1}
-          name="Dr. Kathryn Murphy"
-          title="General Surgeons"
-          stars="4.9"
-          reviews="1800"
-        />
-        <DoctorCard
-          img={profile2}
-          name="Dr. Jacob Jones"
-          title="Hematologists"
-          stars="4.8"
-          reviews="700"
-        />
-        <DoctorCard
-          img={profile3}
-          name="Dr. Jenny Wilson"
-          title="Endocrinologists"
-          stars="4.7"
-          reviews="450"
-        />
-        <DoctorCard
-          img={profile4}
-          name="Dr. Albert Flores"
-          title="Hematologists"
-          stars="4.8"
-          reviews="500"
-        />
+        {cardItems.map((item, id) => (
+          <DoctorCard
+            img={item.img}
+            name={item.name}
+            title={item.title}
+            stars={item.stars}
+            reviews={item.reviews}
+            key={id}
+          />
+        ))}
       </div>
     </div>
   );

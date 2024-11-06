@@ -1,53 +1,76 @@
 import React from "react";
 import InformationCard from "./InformationCard";
-import { faHeartPulse, faTruckMedical, faTooth } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHeartPulse,
+  faTruckMedical,
+  faTooth,
+} from "@fortawesome/free-solid-svg-icons";
 import "../Styles/Info.css";
 
 function Info() {
+  const infoCards = [
+    {
+      title: "Улучшение Общественного Транспорта",
+      description:
+        "Развитие системы общественного транспорта поможет снизить загруженность дорог, улучшить экологическую ситуацию и сделать передвижение по городу более удобным для жителей.",
+      icon: faHeartPulse,
+    },
+    {
+      title: "Озеленение и Ландшафтный Дизайн",
+      description:
+        "Создание зеленых зон, парков и аллей способствует улучшению качества воздуха и формирует комфортную среду для отдыха горожан и гостей Бишкека.",
+      icon: faTruckMedical,
+    },
+    {
+      title: "Развитие Спортивной Инфраструктуры",
+      description:
+        "Строительство современных спортивных комплексов и стадионов поддерживает здоровый образ жизни и предоставляет жителям больше возможностей для занятий спортом.",
+      icon: faTruckMedical,
+    },
+    {
+      title: "Энергоэффективность и Экологичность",
+      description:
+        "Использование возобновляемых источников энергии и установка систем переработки отходов помогут сократить загрязнение окружающей среды и улучшить экологическую устойчивость города.",
+      icon: faTooth,
+    },
+    {
+      title: "Создание Безопасных Пешеходных Зон",
+      description:
+        "Улучшение пешеходной инфраструктуры, включая новые тротуары и освещение, делает город более безопасным и доступным для всех категорий населения, включая детей и пожилых людей.",
+      icon: faTooth,
+    },
+    {
+      title: "Создание Безопасных Пешеходных Зон",
+      description:
+        "Улучшение пешеходной инфраструктуры, включая новые тротуары и освещение, делает город более безопасным и доступным для всех категорий населения, включая детей и пожилых людей.",
+      icon: faTooth,
+    },
+  ];
+
   return (
     <div className="info-section" id="services">
       <div className="info-title-content">
         <h3 className="info-title">
-          <span>What We Do</span>
+          <span>Какие плюсы от нашего продукта!</span>
         </h3>
         <p className="info-description">
-          We bring healthcare to your convenience, offering a comprehensive
-          range of on-demand medical services tailored to your needs. Our
-          platform allows you to connect with experienced online doctors who
-          provide expert medical advice, issue online prescriptions, and offer
-          quick refills whenever you require them.
+          Транспортная система Бишкека также нуждается в улучшении. Создание
+          новых маршрутов общественного транспорта, развитие велодорожек,
+          строительство многоуровневых развязок помогут снизить загруженность
+          дорог и уменьшить пробки. Кроме того, популяризация и поддержка
+          электромобилей, строительство зарядных станций для них — это вклад в
+          экологически чистый и современный транспорт.
         </p>
       </div>
 
       <div className="info-cards-content">
-        <InformationCard
-          title="Emergency Care"
-          description="Our Emergency Care service is designed to be your reliable support
-            in critical situations. Whether it's a sudden illness, injury, or
-            any medical concern that requires immediate attention, our team of
-            dedicated healthcare professionals is available 24/7 to provide
-            prompt and efficient care."
-          icon={faTruckMedical}
-        />
-
-        <InformationCard
-          title="Heart Disease"
-          description="Our team of experienced cardiologists and medical experts use
-            state-of-the-art technology to assess your cardiovascular health and
-            design personalized treatment plans. From comprehensive screenings
-            to advanced interventions, we are committed to helping you maintain
-            a healthy heart and lead a fulfilling life."
-          icon={faHeartPulse}
-        />
-
-        <InformationCard
-          title="Dental Care"
-          description="Smile with confidence as our Dental Care services cater to all your
-            oral health needs. Our skilled dentists provide a wide range of
-            treatments, from routine check-ups and cleanings to cosmetic
-            procedures and restorative treatments."
-          icon={faTooth}
-        />
+        {infoCards.map((card) => (
+          <InformationCard
+            title={card.title}
+            description={card.description}
+            icon={card.icon}
+          />
+        ))}
       </div>
     </div>
   );

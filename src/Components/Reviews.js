@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { customerReviews } from "../Scripts/reviews";
 import "../Styles/Reviews.css";
+import { Container } from "./Container";
 
 function Reviews() {
-  let rMessage, rName, rLocation;
+  let rMessage;
   const reviewsLength = customerReviews.length - 1;
   const [review, setReview] = useState(0);
 
@@ -22,8 +23,6 @@ function Reviews() {
   // update reviews
   const handleReviewsUpdation = () => {
     const reviewMessage = customerReviews[review];
-    rName = reviewMessage.name;
-    rLocation = reviewMessage.location;
     rMessage = reviewMessage.message;
   };
 
@@ -32,43 +31,40 @@ function Reviews() {
 
   return (
     <div className="review-section" id="reviews">
-      <div className="rw-text-content">
-        <p className="rw-text-title">
-          More over <span className="rw-text-num">1500+ Customers</span>
-        </p>
+      <Container>
+        <div className="rw-text-content">
+          <p className="rw-text-title">
+            <span className="rw-text-num"></span>
+          </p>
 
-        <p className="rw-text-desc">Don't believe us, Check clients word</p>
+          <p className="rw-text-desc">Вопросы на данную тему!</p>
 
-        <p className="rw-text-format">
-          <span className="rw-text-quote1">''</span>
-          <span className="rw-review">{rMessage}</span>
-          <span className="rw-text-quote2">''</span>
-        </p>
+          <p className="rw-text-format">
+            <span className="rw-text-quote1">''</span>
+            <span className="rw-review">{rMessage}</span>
+            <span className="rw-text-quote2">''</span>
+          </p>
 
-        <div className="rw-authors">
-          <div className="rw-names">
-            <p className="rw-reviewer-name">{rName}</p>
-            <p className="rw-reviewer-place">{rLocation}</p>
-          </div>
-
-          <div className="rw-btns">
-            <button
-              className="rw-next-btn"
-              type="button"
-              onClick={backBtnClick}
-            >
-              ←
-            </button>
-            <button
-              className="rw-next-btn"
-              type="button"
-              onClick={frontBtnClick}
-            >
-              →
-            </button>
+          <div className="rw-authors">
+            <div className="rw-btns">
+              <button
+                className="rw-next-btn"
+                type="button"
+                onClick={backBtnClick}
+              >
+                ←
+              </button>
+              <button
+                className="rw-next-btn"
+                type="button"
+                onClick={frontBtnClick}
+              >
+                →
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </Container>
     </div>
   );
 }

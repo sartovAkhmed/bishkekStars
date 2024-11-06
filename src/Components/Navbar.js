@@ -5,9 +5,10 @@ import {
   faBars,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import "../Styles/Navbar.css";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+
+import "../Styles/Navbar.css";
 
 function Navbar() {
   const [nav, setNav] = useState(false);
@@ -27,41 +28,42 @@ function Navbar() {
     }
   };
 
+  const navBarLinks = [
+    {
+      to: "/",
+      linkText: "Главная",
+    },
+    {
+      to: "#services",
+      linkText: "Сервисы",
+    },
+    {
+      to: "#about",
+      linkText: "О нас",
+    },
+    {
+      to: "#reviews",
+      linkText: "Слайдер",
+    },
+  ];
+
   return (
     <div className="navbar-section">
       <h1 className="navbar-title">
         <Link to="/">
-          Health <span className="navbar-sign">+</span>
+          BishkekStars <span className="navbar-sign">🔥</span>
         </Link>
       </h1>
 
       {/* Desktop */}
       <ul className="navbar-items">
-        <li>
-          <Link to="/" className="navbar-links">
-            Home
-          </Link>
-        </li>
-        <li>
-          <a href="#services" className="navbar-links">
-            Services
-          </a>
-        </li>
-        <li>
-          <a href="#about" className="navbar-links">
-            About
-          </a>
-        </li>
-        <li>
-          <a href="#reviews" className="navbar-links">
-            Reviews
-          </a>
-        </li>
-        <li>
-          <a href="#doctors" className="navbar-links">
-            Doctors
-          </a>
-        </li>
+        {navBarLinks.map((link, id) => (
+          <li key={id}>
+            <a href={link.to} className="navbar-links">
+              {link.linkText}
+            </a>
+          </li>
+        ))}
       </ul>
 
       <button
@@ -70,7 +72,7 @@ function Navbar() {
         disabled={isButtonDisabled}
         onClick={handleChatBtnClick}
       >
-        <FontAwesomeIcon icon={faCommentDots} /> Live Chat
+        <FontAwesomeIcon icon={faCommentDots} /> Обратиться к специалисту
       </button>
 
       {/* Mobile */}
@@ -80,36 +82,13 @@ function Navbar() {
         </div>
 
         <ul className="mobile-navbar-links">
-          <li>
-            <Link onClick={openNav} to="/">
-              Home
-            </Link>
-          </li>
-          <li>
-            <a onClick={openNav} href="#services">
-              Services
-            </a>
-          </li>
-          <li>
-            <a onClick={openNav} href="#about">
-              About
-            </a>
-          </li>
-          <li>
-            <a onClick={openNav} href="#reviews">
-              Reviews
-            </a>
-          </li>
-          <li>
-            <a onClick={openNav} href="#doctors">
-              Doctors
-            </a>
-          </li>
-          <li>
-            <a onClick={openNav} href="#contact">
-              Contact
-            </a>
-          </li>
+          {navBarLinks.map((link, id) => (
+            <li key={id}>
+              <a onClick={openNav} href={link.to} className="navbar-links">
+                {link.linkText}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
 

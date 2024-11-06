@@ -1,43 +1,60 @@
 import React from "react";
-import Doctor from "../Assets/doctor-group.png";
+import smileMan from "../Assets/smileMan.webp";
 import SolutionStep from "./SolutionStep";
+import { Container } from "./Container";
 import "../Styles/About.css";
 
 function About() {
+  const solutionItems = [
+    {
+      title: "Обновление Общественного Транспорта",
+      description:
+        "Мы стремимся создать доступную и удобную систему транспорта, которая минимизирует пробки и улучшает экологическую обстановку в Бишкеке. Наши проекты по расширению и модернизации транспортной сети облегчат передвижение для всех жителей.",
+    },
+    {
+      title: "Озеленение Города",
+      description:
+        "Бишкек нуждается в зелёных зонах, и мы создаём их! От парков до аллей — каждый зелёный уголок способствует улучшению качества воздуха и дарит жителям комфортные места для отдыха и общения.",
+    },
+    {
+      title: "Создание Пешеходных Зон",
+      description:
+        "Безопасные и удобные пешеходные зоны — это шаг к улучшению городской среды. Мы работаем над проектами, которые позволят людям перемещаться по городу с комфортом, наслаждаясь чистыми и ухоженными тротуарами.",
+    },
+  ];
+
   return (
     <div className="about-section" id="about">
-      <div className="about-image-content">
-        <img src={Doctor} alt="Doctor Group" className="about-image1" />
-      </div>
+      <Container>
+        <div className="aboutWrapper">
+          <div className="about-image-content">
+            <img src={smileMan} alt="Doctor Group" className="about-image1" />
+          </div>
 
-      <div className="about-text-content">
-        <h3 className="about-title">
-          <span>About Us</span>
-        </h3>
-        <p className="about-description">
-          Welcome to Health Plus, your trusted partner for accessible and
-          personalized healthcare. Our expert doctors offer online consultations
-          and specialized services, prioritizing your well-being. Join us on
-          this journey towards a healthier you.
-        </p>
+          <div className="about-text-content">
+            <h3 className="about-title">
+              <span>О нас</span>
+            </h3>
+            <p className="about-description">
+              Добро пожаловать в "Бишкек Будущего" — вашего надежного партнера в
+              улучшении городской среды. Наша команда экспертов работает над
+              проектами, которые делают город более удобным, экологичным и
+              привлекательным для жизни. Присоединяйтесь к нам в этом
+              путешествии к процветающему и комфортному Бишкеку.
+            </p>
 
-        <h4 className="about-text-title">Your Solutions</h4>
+            <h4 className="about-text-title">Наши решения</h4>
 
-        <SolutionStep
-          title="Choose a Specialist"
-          description="Find your perfect specialist and book with ease at Health Plus. Expert doctors prioritize your health, offering tailored care."
-        />
-
-        <SolutionStep
-          title="Make a Schedule"
-          description="Choose the date and time that suits you best, and let our dedicated team of medical professionals ensure your well-being with personalized care."
-        />
-
-        <SolutionStep
-          title="Get Your Solutions"
-          description="Our experienced doctors and specialists are here to provide expert advice and personalized treatment plans, helping you achieve your best possible health."
-        />
-      </div>
+            {solutionItems.map((item, id) => (
+              <SolutionStep
+                title={item.title}
+                description={item.description}
+                key={id}
+              />
+            ))}
+          </div>
+        </div>
+      </Container>
     </div>
   );
 }

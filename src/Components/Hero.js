@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Doctor from "../Assets/doctor-picture.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarCheck, faAngleUp } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate  } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { Container } from "./Container";
+import ManasImg1 from "../Assets/manas-img1.png";
 import "../Styles/Hero.css";
 
 function Hero() {
@@ -34,46 +35,55 @@ function Hero() {
 
   return (
     <div className="section-container">
-      <div className="hero-section">
-        <div className="text-section">
-          <p className="text-headline">❤️ Health comes first</p>
-          <h2 className="text-title">
-            Find your Doctor and make an Appointments
-          </h2>
-          <p className="text-descritpion">
-            Talk to online doctors and get medical advice, online prescriptions,
-            refills and medical notes within minutes. On-demand healthcare
-            services at your fingertips.
-          </p>
-          <button
-            className="text-appointment-btn"
-            type="button"
-            onClick={handleBookAppointmentClick}
-          >
-            <FontAwesomeIcon icon={faCalendarCheck} /> Book Appointment
-          </button>
-          <div className="text-stats">
-            <div className="text-stats-container">
-              <p>145k+</p>
-              <p>Receive Patients</p>
-            </div>
+      <Container>
+        <div className="hero-section">
+          <div className="text-section">
+            <p className="text-headline">
+              ❤️ Построй свой лучший город бишкек! ❤️
+            </p>
+            <h2 className="text-title">
+              Пути к улучшению Бишкека: комфортный, зеленый и современный город
+              будущего
+            </h2>
+            <p className="text-descritpion">
+              Город Бишкек обладает огромным потенциалом для улучшений,
+              направленных на повышение качества жизни его жителей и создание
+              комфортной городской среды. Среди ключевых направлений, которые
+              требуют внимания, выделяются благоустройство общественных
+              пространств, улучшение транспортной системы, озеленение и
+              экологическая безопасность, а также развитие социальной
+              инфраструктуры.
+            </p>
+            <button
+              className="text-appointment-btn"
+              type="button"
+              onClick={handleBookAppointmentClick}
+            >
+              <FontAwesomeIcon icon={faCalendarCheck} /> Зарегистрируйся!
+            </button>
+            <div className="text-stats">
+              <div className="text-stats-container">
+                <p>145k+</p>
+                <p>Получили пользу!</p>
+              </div>
 
-            <div className="text-stats-container">
-              <p>50+</p>
-              <p>Expert Doctors</p>
-            </div>
+              <div className="text-stats-container">
+                <p>50k+</p>
+                <p>Нашли работу!</p>
+              </div>
 
-            <div className="text-stats-container">
-              <p>10+</p>
-              <p>Years of Experience</p>
+              <div className="text-stats-container">
+                <p>125k+</p>
+                <p>Пользователей онлайн!</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="hero-image-section">
-          <img className="hero-image1" src={Doctor} alt="Doctor" />
+          <div className="hero-image-section">
+            <img className="hero-image1" src={ManasImg1} alt="Doctor" />
+          </div>
         </div>
-      </div>
+      </Container>
 
       <div
         onClick={scrollToTop}
