@@ -1,5 +1,5 @@
 import React from "react";
-import smileMan from "../Assets/smileMan.webp";
+import qrCode from "../Assets/qr-code.webp";
 import SolutionStep from "./SolutionStep";
 import { Container } from "./Container";
 import "../Styles/About.css";
@@ -28,7 +28,7 @@ function About() {
       <Container>
         <div className="aboutWrapper">
           <div className="about-image-content">
-            <img src={smileMan} alt="Doctor Group" className="about-image1" />
+            <img src={qrCode} alt="Doctor Group" className="about-image1" />
           </div>
 
           <div className="about-text-content">

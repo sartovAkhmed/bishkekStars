@@ -5,15 +5,21 @@ import { Link } from "react-router-dom";
 import { Container } from "./Container";
 
 function Footer() {
+  const services = [
+    "Emergency Care",
+    "Heart Disease",
+    "Dental Care",
+    "Prescription",
+    "Insights for doctors",
+  ];
+
   return (
     <div className="footer-section">
       <Container>
         <div className="footer-container">
           <div className="ft-info">
             <div className="ft-info-p1">
-              <p className="ft-title">
-                BishkekStars <span className="ft-sign">🔥</span>
-              </p>
+              <p className="ft-title">BishkekStars</p>
               <p className="ft-description">
                 Одним из важных шагов может стать модернизация городских парков
                 и скверов. Обновленные зоны отдыха с современными игровыми
@@ -28,21 +34,11 @@ function Footer() {
           <div className="ft-list">
             <p className="ft-list-title">Services</p>
             <ul className="ft-list-items">
-              <li>
-                <a href="#services">Emergency Care</a>
-              </li>
-              <li>
-                <a href="#services">Heart Disease</a>
-              </li>
-              <li>
-                <a href="#services">Dental Care</a>
-              </li>
-              <li>
-                <a href="#services">Prescription</a>
-              </li>
-              <li>
-                <a href="#services">Insights for doctors</a>
-              </li>
+              {services.map((servic, id) => (
+                <li key={id}>
+                  <a href="#services">{servic}</a>
+                </li>
+              ))}
             </ul>
           </div>
 

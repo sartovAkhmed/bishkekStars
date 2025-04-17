@@ -50,9 +50,7 @@ function Navbar() {
   return (
     <div className="navbar-section">
       <h1 className="navbar-title">
-        <Link to="/">
-          BishkekStars <span className="navbar-sign">🔥</span>
-        </Link>
+        <Link to="/">BishkekStars</Link>
       </h1>
 
       {/* Desktop */}

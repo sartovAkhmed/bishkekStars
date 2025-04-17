@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarCheck, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { Container } from "./Container";
-import ManasImg1 from "../Assets/manas-img1.png";
+import meriyaBishkek from "../Assets/meriya-bishkek.jpg";
 import "../Styles/Hero.css";
 
 function Hero() {
@@ -80,7 +80,7 @@ function Hero() {
           </div>
 
           <div className="hero-image-section">
-            <img className="hero-image1" src={ManasImg1} alt="Doctor" />
+            <img className="hero-image1" src={meriyaBishkek} alt="Doctor" />
           </div>
         </div>
       </Container>

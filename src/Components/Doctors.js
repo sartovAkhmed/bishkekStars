@@ -1,7 +1,5 @@
 import React from "react";
 import DoctorCard from "./DoctorCard";
-import profile1 from "../Assets/profile-1.png";
-import profile2 from "../Assets/profile-2.png";
 import profile3 from "../Assets/profile-3.png";
 import profile4 from "../Assets/profile-4.png";
 import "../Styles/Doctors.css";
@@ -9,32 +7,18 @@ import "../Styles/Doctors.css";
 function Doctors() {
   const cardItems = [
     {
-      img: profile1,
-      name: "Kanybekov Maksat",
-      title: "Frontend-developer",
-      stars: "4.9",
-      reviews: "1800",
-    },
-    {
-      img: profile2,
-      name: "Kanybekov Maksat",
+      img: profile4,
+      name: "Элдар Русланов",
       title: "Frontend-developer",
       stars: "4.9",
       reviews: "1800",
     },
     {
       img: profile3,
-      name: "Kanybekov Maksat",
-      title: "Frontend-developer",
-      stars: "4.9",
-      reviews: "1800",
-    },
-    {
-      img: profile4,
-      name: "Kanybekov Maksat",
-      title: "Frontend-developer",
-      stars: "4.9",
-      reviews: "1800",
+      name: "Кубанычбекова Айдина",
+      title: "Ui-Ux disign",
+      stars: "3.6",
+      reviews: "1500",
     },
   ];
 
